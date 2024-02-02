@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Pages{% endblock %}
+
+{% block content %}
+<div class="center-x">
+    <div class="pages">
+        {% for page in pages %}
+        <div class="page-card">
+            <span>
+                <a href="{% url 'pages:page' slug=page.slug %}">{{ page.title }}</a>
+                {% if page.private %}
+                    <i class="material-icons">visibility_off</i>
+                {% endif %}
+            </span>
+            <div>
+                <a href="{% url 'pages:update' slug=page.slug %}"><button><i class="material-icons">edit</i></button></a>
+                <a href="{% url 'pages:delete' slug=page.slug %}"><button><i class="material-icons">delete</i></button></a>
+            </div>
+        </div>
+        {% empty %}
+            <center><h2>No Pages</h2></center>
+        {% endfor %}
+        {% if page_obj %}
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}"><button>Previous</button></a>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"><button>Next</button></a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

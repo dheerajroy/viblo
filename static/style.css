@@ -1,0 +1,196 @@
+:root {
+    --light-gray: #999;
+    --dark-gray: #222;
+    --black: black;
+    --page-min-height: calc(100vh - 130px);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    font-family: monospace;
+}
+
+body {
+    background: var(--dark-gray);
+    color: var(--light-gray);
+}
+
+.center-xy {
+    width: 100%;
+    min-height: var(--page-min-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-x {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+input, textarea {
+    background: var(--light-gray) !important;
+    padding: 5px;
+}
+
+button, input[type="submit"] {
+    cursor: pointer;
+    background: var(--light-gray);
+    color: var(--dark-gray);
+    padding: 5px;
+}
+
+button:hover, input[type="submit"]:hover {
+    color: var(--light-gray);
+    background: var(--black) !important;
+    font-weight: 900;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 500px;
+    width: 80%;
+}
+
+nav {
+    background: var(--dark-gray);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+}
+
+nav>a {
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+nav>div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.container {
+    padding: 30px 10px;
+}
+
+.index-container {
+    max-width: 500px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.index-container>div {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.create-update-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pages {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.page-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.page-card span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-card .material-icons {
+    font-size: 15px;
+}
+
+.page-card a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.page-card>div {
+    display: flex;
+    gap: 10px;
+}
+
+.pagination {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.delete-container>div {
+    display: flex;
+    gap: 10px;
+}
+
+.errorlist {
+    list-style: none;
+    color: red;
+    font-weight: 900;
+}
+
+.django-ckeditor-widget {
+    width: 98vw;
+    min-height: 500px;
+}
+
+.django-ckeditor-widget span {
+    background: var(--dark-gray);
+    color: var(--light-gray);
+}
+
+::-webkit-scrollbar {
+    background: var(--dark-gray);
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--black);
+}

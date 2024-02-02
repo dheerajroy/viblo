@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Viblo - {% block title %}{% endblock %}</title>
+
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <h1>Viblo</h1>
+        </a>
+        <div>
+            {% if page %}
+                <button onclick="copyPageLink()"><i class="material-icons">link</i></button>
+                <button onclick="downloadPdf()"><i class="material-icons">download</i></button>
+            {% endif %}
+            <a href="{% url 'pages:pages' %}">
+                <button><i class="material-icons">auto_stories</i></button>
+            </a>
+            <a href="{% url 'pages:create' %}">
+                <button><i class="material-icons">add</i></button>
+            </a>
+            {% if user.is_authenticated %}
+            <form action="{% url 'accounts:signout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit"><i class="material-icons">exit_to_app</i></button>
+                </form>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

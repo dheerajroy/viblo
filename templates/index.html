@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Ideas, Your Way{% endblock %}
+
+{% block content %}
+    <div class="center-xy">
+        <div class="index-container">
+            <h1>Viblo - Your Ideas, Your Way</h1>
+            <p>
+                Where creativity meets simplicity! Craft personalized pages, jot down brilliant notes, and seamlessly share
+                your ideas.
+                Viblo empowers you to organize thoughts effortlessly and download your creations. Elevate your
+                productivity, embrace creativity - <b>Viblo, your canvas for inspired expression!</b>
+            </p>
+            {% if not user.is_authenticated %}
+                <div>
+                    <a href="{% url 'accounts:signin' %}">
+                        <button>Sign In</button>
+                    </a>
+                    <a href="{% url 'accounts:signup' %}">
+                        <button>Sign Up</button>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
