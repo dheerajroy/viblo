@@ -6,7 +6,7 @@
     <div class="create-update-container">
         <form method="post">
             {% csrf_token %}
-            <input type="submit" value="{{ title }}/Save">
+            <input type="submit" value="Save">
             {{ form.media }}
             {{ form.as_p }}
         </form>
