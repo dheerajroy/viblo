@@ -12,7 +12,8 @@ function copyPageLink() {
     document.body.appendChild(tempTextarea);
     tempTextarea.select();
     tempTextarea.setSelectionRange(0, 99999);
-    document.execCommand('copy');
+    document.t
+    ('copy');
     document.body.removeChild(tempTextarea);
     alert('Link copied to clipboard!');
 }

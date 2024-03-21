@@ -1,6 +1,6 @@
 from django import forms
 from .models import Page
-from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 class CreateUpdatePageForm(forms.ModelForm):
@@ -8,7 +8,7 @@ class CreateUpdatePageForm(forms.ModelForm):
         model = Page
         fields = ['title', 'private', 'content']
         widgets = {
-            'content': CKEditorWidget()
+            'content': CKEditorUploadingWidget()
         }
 
     def __init__(self, *args, **kwargs):

@@ -166,6 +166,12 @@ nav>div {
     gap: 10px;
 }
 
+.inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .errorlist {
     list-style: none;
     color: red;

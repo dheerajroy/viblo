@@ -4,11 +4,18 @@
 
 {% block content %}
     <div class="create-update-container">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="submit" value="Save">
+            <div class="inline">
+                {{ form.title }}
+                <div class="inline">
+                    {{ form.private.label }}
+                    {{ form.private }}
+                </div>
+                <input type="submit" value="Save">
+            </div>
+            {{ form.content }}
             {{ form.media }}
-            {{ form.as_p }}
         </form>
     </div>
 {% endblock %}
