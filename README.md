@@ -22,7 +22,7 @@ Viblo is a web application built with Django, allowing users to create, manage, 
     python manage.py makemigrations
     python manage.py migrate
     ```
-4. Create super user to access admin panel at `/admin`:
+4. Create super user to access admin panel at ` http://127.0.0.1:8000/admin`:
 
     ```bash
     python manage.py createsuperuser
